@@ -1,0 +1,45 @@
+$cols:15;
+$col:(100%/$cols);
+
+.col {
+	display:block;
+
+	&.view-centered {
+		margin:0 auto;
+	}
+	@for $i from 1 through $cols {
+		&.view-sm#{$i} {
+			@media (min-width:$break-sm) and (max-width:$break-md - 1) {
+				width:$col*$i;
+				flex:0 0 $col*$i;
+			}
+		}
+		&.view-ml_sm#{$i} {
+			@media (min-width:$break-sm) and (max-width:$break-md - 1) {
+				margin-left: $col*$i;
+			}
+		}
+		&.view-md#{$i} {
+			@media (min-width:$break-md) and (max-width:$break-lg - 1) {
+				width:$col*$i;
+				flex:0 0 $col*$i;
+			}
+		}
+		&.view-ml_md#{$i} {
+			@media (min-width:$break-md) and (max-width:$break-lg - 1) {
+				margin-left: $col*$i;
+			}
+		}
+		&.view-lg#{$i} {
+			@media (min-width:$break-lg) {
+				width:$col*$i;
+				flex:0 0 $col*$i;
+			}
+		}
+		&.view-ml_lg#{$i} {
+			@media (min-width:$break-lg) {
+				margin-left: $col*$i;
+			}
+		}
+	}
+}
